@@ -1,0 +1,26 @@
+framework:
+  name: paddle
+
+
+data:
+  use_redis: false
+  play_out: 1200        
+  c_puct: 5             
+  buffer_size: 100000   
+  train_data_buffer_path: data/train_data_buffer.pkl   
+  redis_host: localhost
+  redis_port: 6379
+  redis_db: 0
+
+model:
+  kill_action: 30      
+  dirichlet: 0.2       
+  paddle_model: output/current_policy100.model      
+  pytorch_model: output/current_policy.pkl
+
+train:
+  batch_size: 512
+  kl_targ: 0.02
+  epochs: 5
+  game_batch_num: 3000
+  train_update_interval: 600
